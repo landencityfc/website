@@ -1,0 +1,714 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================
+   ALGEMENE LAYOUT
+========================== */
+
+html{
+    overflow-x:hidden;
+    width:100%;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    width:100%;
+    max-width:100vw;
+    padding-top:80px;
+    overflow-x:hidden;
+
+    text-align:center;
+    font-family:'Raleway',sans-serif;
+    line-height:1.6;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #021526 0%,
+            #03346E 45%,
+            #021526 100%
+        );
+}
+
+header{
+    width:100%;
+}
+
+.content{
+    flex:1;
+    padding-bottom:60px;
+}
+
+.page-titel,
+h1{
+    color:white;
+    font-family:'Orbitron',sans-serif;
+}
+
+p{
+    color:white;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:80px;
+
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(15px);
+
+    display:flex;
+    align-items:center;
+
+    gap:100px;
+
+    border-bottom:3px solid #021526;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+    z-index:1000;
+}
+
+.navbar a{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    color:black;
+    text-decoration:none;
+    font-family:'Orbitron',sans-serif;
+    font-size:25px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#0A4D8C;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:100px;
+}
+
+.afbeeldingnav{
+    width:55px;
+    height:auto;
+    display:block;
+
+    margin-left:70px;
+}
+
+.afbeelding{
+    width:300px;
+    height:auto;
+}
+
+@media (max-width:768px){
+
+    .navbar{
+        height:auto;
+        padding:10px;
+        flex-direction:column;
+        gap:10px;
+        width:100%;
+        overflow:hidden;
+    }
+
+
+    .navbar ul{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+
+        width:100%;
+        padding:0;
+        margin:0;
+    }
+
+
+    nav a{
+        font-size:14px;
+    }
+
+    .afbeeldingnav{
+        width:40px;
+        margin-left:0;
+    }
+
+    body{
+        padding-top:140px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+        text-align:left;
+        justify-items:center;
+        padding:40px 20px;
+        gap:30px;
+    }
+
+    .wedstrijd-item{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:6px 12px;
+        text-align:center;
+    }
+
+    .wedstrijd-badge{
+        margin-right:0;
+    }
+
+}
+
+/* ==========================
+   HOMEPAGE
+========================== */
+
+.home-content{
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 25px;
+
+    text-align: center;
+    color: white;
+}
+
+.home-content h1{
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+.home-content h2{
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.85);
+}
+
+.home-content p{
+    font-size: 1.2rem;
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+.home-content img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+
+    display: block;
+    margin: 40px auto;
+
+    border-radius: 20px;
+    border: 3px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
+
+    transition: all 0.3s ease;
+    margin-bottom: 100px;
+}
+
+
+.home-content img:hover{
+    transform: scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.45);
+}
+
+/* ==========================
+   SPONSORS
+========================== */
+
+.sponsors-wrapper{
+    max-width:1000px;
+    margin:auto;
+    padding:0 20px;
+}
+
+.sponsor-tier{
+    margin-bottom:50px;
+}
+
+.sponsor-tier p{
+    font-size: 1.2rem;
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+.sponsor-tier h2{
+    color:white;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:10px;
+}
+
+
+.sponsor-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:100px;
+    margin-bottom: 60px;
+}
+
+.sponsor-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    max-width:300px;
+}
+
+
+.sponsor-beschrijving{
+    font-size:0.8rem;
+    line-height:1.3;
+    color:white;
+    text-align:center;
+    max-width:220px;
+    width:100%;
+}
+
+
+.sponsor-card img{
+    height: 200px;
+    width: auto;
+    max-width: 400px;
+
+    display: block;
+    margin: 10px auto;
+
+    border-radius: 20px;
+    border: 3px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
+
+    transition: all 0.3s ease;
+}
+
+
+.sponsor-card img:hover{
+    transform: scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.45);
+}
+
+/* ==========================
+   KALENDER
+========================== */
+
+.adres-link{
+    color: #9ccfff;
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    transition: all 0.3s ease;
+}
+
+.adres-link:hover{
+    color: white;
+
+    border-bottom: 1px solid white;
+
+    padding-bottom: 2px;
+}
+
+.kalender-wrapper{
+    max-width:700px;
+    margin:auto;
+    padding:0 20px;
+    margin-bottom: 50px;
+}
+
+.kalender-sectie{
+    max-width: 1000px;
+
+    margin: 0 auto 60px auto;
+    padding: 30px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 15px;
+}
+
+.kalender-sectie h2{
+    color: white;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.kalender-sectie p{
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+
+.wedstrijden-lijst{
+    list-style:none;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.wedstrijd-item{
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:8px;
+
+    padding:16px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:white;
+
+    transition:0.3s;
+}
+
+.wedstrijd-item:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.wedstrijd-datum{
+    min-width:90px;
+}
+
+.wedstrijd-tegenstander{
+    flex:1;
+}
+
+.wedstrijd-badge{
+    border-radius:20px;
+    padding:4px 10px;
+    margin-right: 20px;
+}
+
+.wedstrijd-badge.thuis{
+    background:#4CAF50;
+    color:white;
+}
+
+.wedstrijd-badge.uit{
+    background:#E67E22;
+    color:white;
+}
+
+.wedstrijd-badge.event{
+    background:#558ada;
+    color:white;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact-wrapper{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.contact-wrapper h1{
+    margin-bottom:40px;
+}
+
+.contact-wrapper h2{
+    color:white;
+    margin-bottom:5px;
+}
+
+.socials-contact{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:60px;
+}
+
+.social-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:white;
+    text-decoration:none;
+
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:12px;
+
+    padding:12px 20px;
+
+    transition:0.3s;
+}
+
+.social-link:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.12);
+}
+
+.social-iconci{
+    width: 42px;
+    height:42px;
+    object-fit:contain;
+    display:block;
+}
+
+.social-iconcf{
+    width:30px;
+    height:30px;
+    object-fit:contain;
+    display:block;
+}
+
+.contact-card{
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:15px;
+
+    padding:25px;
+    margin-bottom:25px;
+
+    text-align:left;
+
+    transition:0.3s;
+}
+
+.contact-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.contact-card h2{
+    color:white;
+    margin-bottom:5px;
+}
+
+.contact-card h3{
+    color:#9ccfff;
+    margin-bottom:15px;
+    font-weight:500;
+}
+
+.contact-card p{
+    margin-bottom:6px;
+}
+/* ==========================
+   PLOEG
+========================== */
+
+.ploeg-wrapper{
+    max-width:1000px;
+    margin:auto;
+    padding:0 20px;
+}
+
+.ploeg-groep{
+    margin-bottom:50px;
+}
+
+.ploeg-groep h1{
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.ploeg-groep h2{
+    color:white;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:20px;
+}
+
+.speler-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+
+    gap:20px;
+}
+
+.speler-card{
+    width:160px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:10px;
+
+    color:white;
+
+    transition:0.3s;
+}
+
+.speler-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.speler-foto{
+    width:100%;
+    height:160px;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,0.12);
+}
+
+.speler-foto img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.speler-nummer{
+    font-family:'Orbitron',sans-serif;
+    font-size:26px;
+    margin-top:10px;
+}
+
+.speler-naam{
+    margin-top:5px;
+}
+
+.speler-positie{
+    margin-bottom:10px;
+    opacity:0.8;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+    margin-top:80px;
+    background:black;
+}
+
+.footer-container{
+    max-width:1400px;
+    margin:auto;
+    padding:60px 40px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+
+    gap:40px;
+    text-align:left;
+}
+
+.footer-nav{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.footer-logo img{
+    width:100px;
+    height:auto;
+
+    background:white;
+    border-radius:50%;
+
+    padding:1px;
+    margin-bottom:15px;
+}
+
+.footer h3,
+.footer h4{
+    color:white;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:15px;
+}
+
+.footer p{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer a{
+    color:white;
+    text-decoration:none;
+
+    display:block;
+    margin-bottom:8px;
+
+    transition:0.3s;
+}
+
+.footer a:hover{
+    color:#53a4ff;
+    padding-left:5px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.15);
+
+    text-align:center;
+
+    color:white;
+
+    padding:20px;
+}
+
+.social-iconi{
+    width: 30px;
+    height: 30px;
+
+    margin-left: 3px;
+
+    vertical-align: middle;
+}
+
+.social-iconi:hover{
+    transform: scale(1.15);
+    opacity: 0.85;
+}
+
+.social-iconf{
+    width: 20px;
+    height: 20px;
+
+    margin-left: 9px;
+
+    vertical-align: middle;
+}
+
+.social-iconf:hover{
+    transform: scale(1.15);
+    opacity: 0.85;
+}
