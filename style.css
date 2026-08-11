@@ -321,7 +321,7 @@ nav a:hover{
 ========================== */
 
 .adres-link{
-    color: #9ccfff;
+    color: white;
     text-decoration: none;
 
     border-bottom: 1px solid transparent;
@@ -330,7 +330,7 @@ nav a:hover{
 }
 
 .adres-link:hover{
-    color: white;
+    color: #9ccfff;
 
     border-bottom: 1px solid white;
 
