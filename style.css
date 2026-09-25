@@ -725,6 +725,7 @@ nav a:hover{
 }
 
 .foto-tegel{
+    position:relative;
     background:rgba(255,255,255,0.08);
     border:2px dashed rgba(255,255,255,0.4);
     border-radius:10px;
@@ -737,7 +738,15 @@ nav a:hover{
     overflow:hidden;
 }
 
+/* Zodra er een echte <img> in de tegel staat, verdwijnt de placeholder-rand automatisch */
+.foto-tegel:has(img){
+    border:none;
+    background:none;
+}
+
 .foto-tegel img{
+    position:absolute;
+    inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
