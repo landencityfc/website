@@ -766,6 +766,10 @@ nav a:hover{
 }
 
 @media (max-width:768px){
+    .fotoalbum-grid{
+        grid-template-columns:1fr;
+    }
+
     .foto-tegel.foto-groot{
         grid-column:span 1;
         grid-row:span 1;
